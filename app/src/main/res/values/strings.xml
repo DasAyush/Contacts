@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">ContactsApp</string>
+    <string name="action_settings">Settings</string>
+    <string name="first">First</string>
+    <string name="last">Last</string>
+    <string name="sample_time">12:00 pm</string>
+    <string name="sample_otp_text">Hi. Your OTP is : </string>
+    <string name="send">Send</string>
+    <string name="sample_mob_number">+919431335141</string>
+    <string name="send_message">Send Message</string>
+
+    <string name="ask_question"> अपने पोल का प्रश्न यहां लिखें ... </string>
+    <string name="option_1"> विकल्प 1 </string>
+    <string name="option_2"> विकल्प 2 </string>
+    <string name="new_poll"> नया पोल </string>
+    <string name="post"> पोस्ट करें </string>
+    <string name="post_duration_text"> अपने पोल को चलाएं :</string>
+    <string name="post_duration"> 1 दिन </string>
+
+</resources>

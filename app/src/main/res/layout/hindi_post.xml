@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/askQuestion"
+        android:text="@string/ask_question"
+        android:textSize="14sp"
+        android:textColor="@color/poll_text_color"
+        android:background="#ffffff"
+        android:layout_marginTop="17dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="176dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="132dp"
+        android:id="@+id/optionsLayout"
+        android:layout_marginStart="11dp"
+        android:layout_marginEnd="11dp"
+        android:layout_marginTop="69dp"
+        android:background="@drawable/option2_border"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/askQuestion">
+
+        <EditText
+            android:layout_width="280dp"
+            android:layout_height="42dp"
+            android:id="@+id/option1"
+            android:text="@string/option_1"
+            android:textSize="14sp"
+            android:paddingStart="12dp"
+            android:paddingEnd="0dp"
+            android:textColor="@color/poll_text_color"
+            android:background="@drawable/option1_border"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="42dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/option2"/>
+
+        <EditText
+            android:layout_width="280dp"
+            android:layout_height="42dp"
+            android:id="@+id/option2"
+            android:text="@string/option_2"
+            android:textSize="14sp"
+            android:paddingStart="12dp"
+            android:paddingEnd="0dp"
+            android:background="@drawable/option2_border"
+            android:textColor="@color/poll_text_color"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="42dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/option1"
+            android:layout_marginBottom="16dp"/>
+
+        <ImageView
+            android:layout_width="21dp"
+            android:layout_height="21dp"
+            android:id="@+id/addOption"
+            android:src="@mipmap/add_option"
+            android:layout_marginEnd="11dp"
+            android:layout_marginBottom="26dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </android.support.constraint.ConstraintLayout>
+
+    <TextView
+        android:layout_width="120dp"
+        android:layout_height="17.4dp"
+        android:id="@+id/postDurationText"
+        android:text="@string/post_duration_text"
+        android:layout_marginStart="11dp"
+        android:layout_marginBottom="280dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/optionsLayout"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <TextView
+        android:layout_width="85dp"
+        android:layout_height="17.4dp"
+        android:id="@+id/postDuration"
+        android:text="@string/post_duration"
+        android:textColor="@color/poll_orange"
+        android:layout_marginBottom="280dp"
+        android:layout_marginEnd="172dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/postDurationText"
+        app:layout_constraintTop_toBottomOf="@id/optionsLayout"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</android.support.constraint.ConstraintLayout>
