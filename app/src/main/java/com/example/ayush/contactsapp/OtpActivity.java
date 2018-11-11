@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,6 +22,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -42,10 +45,15 @@ public class OtpActivity extends AppCompatActivity implements View.OnClickListen
     private Contact contact;
     private List<Message> messages = new ArrayList<>();
 
+    @BindView(R.id.progressBar)
+    ProgressBar progressBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_otp);
+
+        ButterKnife.bind(this);
         otp = findViewById(R.id.otpText);
         send = findViewById(R.id.sendButton);
 
@@ -68,6 +76,8 @@ public class OtpActivity extends AppCompatActivity implements View.OnClickListen
 
     @Override
     public void onClick(View v) {
+
+        progressBar.setVisibility(View.VISIBLE);
 
         sendTime = TimeUtility.getCurrentDateTime();
         body = otp.getText().toString();
@@ -96,11 +106,14 @@ public class OtpActivity extends AppCompatActivity implements View.OnClickListen
         api.sendMessage(ACCOUNT_SID, base64EncodedCredentials, data)
                 .enqueue(new Callback<ResponseBody>() {
                     @Override
-                    public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                    public void onResponse(Call<ResponseBody> call,
+                                           Response<ResponseBody> response) {
                         if (response.isSuccessful())
                             Toast.makeText(getApplicationContext(), "Response successful"
                                     + "\n" + otpString + " " + sendTime,
                                     Toast.LENGTH_SHORT).show();
+                        progressBar.setVisibility(View.GONE);
+
                         message.setFirst(contact.getFirst());
                         message.setLast(contact.getLast());
                         message.setOtp(otpString);

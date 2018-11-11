@@ -41,6 +41,13 @@ public class MessageListFragment extends Fragment {
         msgRecyclerView.setLayoutManager(linearLayoutManager);
         msgRecyclerView.setAdapter(messagesAdapter);
 
+
+        return v;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
         if (getArguments()!=null) {
             message = getArguments().getParcelable("msg");
             messages.add(message);
@@ -50,8 +57,6 @@ public class MessageListFragment extends Fragment {
             intent.putExtra("update", "updateViewPager");
             startActivity(intent);
         }
-
-        return v;
+        messagesAdapter.notifyDataSetChanged();
     }
-
 }
