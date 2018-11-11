@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorAccent">#C62828</color>
     <color name="poll_text_color">#999999</color>
     <color name="poll_orange">#f69653</color>
 </resources>

@@ -28,6 +28,7 @@ public class ContactDetailsActivity extends AppCompatActivity implements View.On
         if (intent!=null && intent.getExtras()!=null)
             contact = (Contact) intent.getExtras().get("cont");
 
+        assert contact != null;
         first.setText(contact.getFirst());
         last.setText(contact.getLast());
         phone.setText(contact.getNumber());
